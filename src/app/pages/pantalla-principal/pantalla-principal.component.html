@@ -2,30 +2,20 @@
   <app-header></app-header>
 </ion-header>
 
-<ion-content>
-<div class="cuerpo">
+<ion-content class="ion-padding">
   <div class="menu-container">
-    <details>
-      <summary>Arquitectura</summary>
-      <p><strong>Seccion:</strong>001D</p>
-      <ion-button expand="block" type="submit" (click)="detallesA()">Detalles</ion-button>
-    </details>
-
-    <details>
-      <summary>Programación de Aplicaciones Móviles</summary>
-      <p><strong>Seccion:</strong>001D</p>
-      <ion-button expand="block" type="submit" (click)="detallesP()">Detalles</ion-button>
-    </details>
-
-    <details>
-      <summary>Calidad de Software</summary>
-      <p><strong>Seccion:</strong>001D</p>
-      <ion-button expand="block" type="submit" (click)="detallesC()">Detalles</ion-button>
-    </details>
+    <ion-card *ngFor="let asignatura of asignaturas">
+      <ion-card-header>
+        <ion-card-subtitle>Sección: {{asignatura.seccion}}</ion-card-subtitle>
+        <ion-card-title>{{asignatura.nombre}}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-button expand="block" (click)="detalles(asignatura.nombre)">Detalles</ion-button>
+      </ion-card-content>
+    </ion-card>
   </div>
-</div>
 </ion-content>
 
- <ion-footer>
+<ion-footer>
   <app-footer></app-footer>
 </ion-footer>

@@ -1,0 +1,74 @@
+ion-content {
+  --background: #002855;
+  --color: #e6f1ff;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 20px;
+}
+
+.page-title {
+  color: #ffc409;
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.camera-permission-card {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+
+  .camera-icon {
+    font-size: 48px;
+    color: #ffc409;
+    margin-bottom: 10px;
+  }
+
+  h2 {
+    color: #ffc409;
+    margin-bottom: 10px;
+  }
+
+  p {
+    color: #e6f1ff;
+  }
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.custom-button {
+  --background: #ffc409;
+  --background-hover: #e1ba09;
+  --color: #0a192f;
+  font-weight: bold;
+  text-transform: uppercase;
+  --border-radius: 8px;
+}
+
+.cancel-button {
+  --background: #64ffda;
+  --background-hover: #45e5c3;
+}
+
+.return-button {
+  --background: #3880ff;
+  --background-hover: #3171e0;
+  margin-top: auto;
+}
+
+.status-message {
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: bold;
+}

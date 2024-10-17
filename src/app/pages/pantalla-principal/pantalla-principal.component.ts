@@ -8,19 +8,18 @@ import { DatosAsignaturaService } from 'src/app/servicios/datos-asignatura.servi
   styleUrls: ['./pantalla-principal.component.scss'],
 })
 export class PantallaPrincipalComponent {
-  nombre!: string;
-  datosAsignatura = inject(DatosAsignaturaService)
+  datosAsignatura = inject(DatosAsignaturaService);
+
+  asignaturas = [
+    { nombre: 'Arquitectura', seccion: '001D' },
+    { nombre: 'Programación de Aplicaciones Móviles', seccion: '001D' },
+    { nombre: 'Calidad de Software', seccion: '001D' }
+  ];
+
   constructor(private router: Router) {}
-  detallesA() {
-    this.datosAsignatura.setNombre('Arquitectura');
-    this.router.navigate(['/detalle-asignatura']);
-  }
-  detallesP() {
-    this.datosAsignatura.setNombre('Programación de Aplicaciones Móviles');
-    this.router.navigate(['/detalle-asignatura']);
-  }
-  detallesC() {
-    this.datosAsignatura.setNombre('Calidad de Software');
+
+  detalles(nombreAsignatura: string) {
+    this.datosAsignatura.setNombre(nombreAsignatura);
     this.router.navigate(['/detalle-asignatura']);
   }
 }

@@ -112,7 +112,6 @@ export class InicioSesionComponent implements OnInit {
         }
       ]
     });
-
     await alert.present();
   }
 }

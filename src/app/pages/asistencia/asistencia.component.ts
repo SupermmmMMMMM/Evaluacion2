@@ -9,6 +9,6 @@ export class AsistenciaComponent  implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() {''}
 
 }

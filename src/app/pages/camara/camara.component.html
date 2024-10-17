@@ -1,20 +1,30 @@
-<ionic-header>
+<ion-header>
   <app-header></app-header>
-</ionic-header>
+</ion-header>
 
 <ion-content class="ion-padding">
-    <h2>Escanear QR</h2>
-    <form (ngSubmit)="onSubmit()">
-      <ion-item>
-        <ion-card-content>
-          <p>abre la camara xuxetu</p>
-        </ion-card-content>
-      </ion-item>
-      <ion-button expand="block" type="submit">si</ion-button>
-      <ion-button expand="block" (click)="cancelar()">no</ion-button>
-    </form>
-    <ion-text color="danger" *ngIf="loginError">{{ loginError }}</ion-text>
-    <ion-button expand="block" type="submit" (click)="volver()">Volver al menú principal</ion-button>
+  <div class="main-container">
+    <h1 class="page-title">Escanear QR</h1>
+
+    <div class="camera-permission-card">
+      <ion-icon name="camera" class="camera-icon"></ion-icon>
+      <h2>Permiso de cámara</h2>
+      <p>Para escanear el código QR, necesitamos acceso a tu cámara. ¿Nos permites usarla?</p>
+    </div>
+
+    <div class="button-container">
+      <ion-button expand="block" (click)="onSubmit()" class="custom-button">Permitir acceso</ion-button>
+      <ion-button expand="block" (click)="cancelar()" class="custom-button cancel-button">No permitir</ion-button>
+    </div>
+
+    <ion-text color="white" *ngIf="statusMessage" class="status-message">
+      {{ statusMessage }}
+    </ion-text>
+
+    <ion-button expand="block" (click)="volver()" class="custom-button return-button">
+      Volver al menú principal
+    </ion-button>
+  </div>
 </ion-content>
 
 <ion-footer>

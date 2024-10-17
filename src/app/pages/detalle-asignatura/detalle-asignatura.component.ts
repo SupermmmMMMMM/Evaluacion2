@@ -1,7 +1,6 @@
 import { DatosAsignaturaService } from './../../servicios/datos-asignatura.service';
 import { Component, inject, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { WebService } from 'src/app/servicios/web.service';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/servicios/auth.service';
 import { Usuario } from 'src/app/models/bd.models';
 
@@ -14,24 +13,29 @@ export class DetalleAsignaturaComponent implements OnInit {
 
   tipoUsuario: string = '';
   nombre: string = '';
+  asignaturaNombre: string = '';
   datosAsignatura = inject(DatosAsignaturaService);
-  constructor(private router: Router, private route: ActivatedRoute, private authService: AuthService, private webService: WebService) {}
+
+  constructor(
+    private router: Router,
+    private authService: AuthService
+  ) {}
 
   ngOnInit() {
-    this.authService.usuarioCompleto$.subscribe((usuario: Usuario | null)=> {
+    this.authService.usuarioCompleto$.subscribe((usuario: Usuario | null) => {
       if(usuario){
         this.nombre = usuario.nombre;
         this.tipoUsuario = usuario.tipo;
       }
+    });
+    this.asignaturaNombre = this.datosAsignatura.getNombre();
+  }
+
+  accionQR() {
+    if (this.tipoUsuario === 'docente') {
+      this.router.navigate(['/qr']);
+    } else {
+      this.router.navigate(['/camara']);
     }
-
-  )
-  }
-  generarQR() {
-    this.router.navigate(['/qr']);
-  }
-
-  abrirCamara() {
-    this.router.navigate(['/camara']);
   }
 }

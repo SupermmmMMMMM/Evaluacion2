@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -6,18 +6,19 @@ import { Router } from '@angular/router';
   templateUrl: './camara.component.html',
   styleUrls: ['./camara.component.scss'],
 })
-export class CamaraComponent  implements OnInit {
-  loginError: string = '';
+export class CamaraComponent {
+  statusMessage: string = '';
+
   constructor(private router: Router) { }
 
-  ngOnInit() {''}
-
   cancelar() {
-    this.loginError = 'Presione volver al menú principal';
+    this.statusMessage = 'Acceso a la cámara denegado. No se puede escanear el QR.';
   }
+
   onSubmit() {
-    this.loginError = 'QR escaneado correctamente, presione volver al menú principal';
+    this.statusMessage = 'Acceso a la cámara permitido. QR escaneado correctamente.';
   }
+
   volver() {
     this.router.navigate(['/pantalla-principal']);
   }

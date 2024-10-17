@@ -3,15 +3,35 @@
 </ion-header>
 
 <ion-content class="ion-padding">
-  <h2>Inicio de Sesión</h2>
-  <form (ngSubmit)="onSubmit()">
-    <ion-item>
-      <ion-label position="floating">Correo electrónico</ion-label>
-      <ion-input type="email" [(ngModel)]="email" name="email" required></ion-input>
-    </ion-item>
-    <ion-button expand="block" type="submit">Enviar solicitud</ion-button>
-  </form>
-  <ion-text color="danger" *ngIf="loginError">{{ loginError }}</ion-text>
+  <div class="main-container">
+    <h1 class="page-title">Restablecer Contraseña</h1>
+
+    <div class="form-container">
+      <ion-icon name="mail" class="mail-icon"></ion-icon>
+      <h2>Recuperación de cuenta</h2>
+      <p>Ingresa tu correo electrónico para recibir instrucciones de restablecimiento de contraseña.</p>
+
+      <form (ngSubmit)="onSubmit()">
+        <ion-item>
+          <ion-label position="floating">Correo electrónico</ion-label>
+          <ion-input [(ngModel)]="email" name="email" type="email" required></ion-input>
+        </ion-item>
+
+        <div class="button-container">
+          <ion-button expand="block" type="submit" class="custom-button">Enviar solicitud</ion-button>
+          <ion-button expand="block" (click)="volver()" class="custom-button cancel-button">Cancelar</ion-button>
+        </div>
+      </form>
+    </div>
+
+    <ion-text *ngIf="mensaje" [class.success-message]="!error" [class.error-message]="error" class="status-message">
+      {{ mensaje }}
+    </ion-text>
+
+    <ion-button expand="block" (click)="volver()" class="custom-button return-button">
+      Volver al login
+    </ion-button>
+  </div>
 </ion-content>
 
 <ion-footer>

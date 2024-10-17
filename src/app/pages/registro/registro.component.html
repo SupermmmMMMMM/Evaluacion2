@@ -1,61 +1,67 @@
+<app-header></app-header>
 <ion-content class="ion-padding">
-  <app-header></app-header>
-  <div class="container">
-    <div id="form">
-      <div class="logo-container">
-        <img src="assets/img/logo.png" class="logo" alt="Logo">
-      </div>
-
-      <form (ngSubmit)="registrar()">
+  <div class="centered-content">
+    <div class="form-container">
+      <h2>Registro</h2>
+      <form (ngSubmit)="registrar()" id="registro-form">
         <div class="input-wrapper">
-          <p style="color: rgb(240, 200, 21);">Nombre Completo</p>
+          <ion-label>Nombre Completo</ion-label>
           <ion-item>
             <ion-input [(ngModel)]="usuario.nombre" name="nombre" required></ion-input>
           </ion-item>
         </div>
 
         <div class="input-wrapper">
-          <p style="color: rgb(240, 200, 21);">Usuario</p>
+          <ion-label>Usuario</ion-label>
           <ion-item>
             <ion-input [(ngModel)]="usuario.usuario" name="usuario" required></ion-input>
           </ion-item>
         </div>
 
         <div class="input-wrapper">
-          <p style="color: rgb(240, 200, 21);">Contraseña</p>
+          <ion-label>Contraseña</ion-label>
           <ion-item>
             <ion-input [(ngModel)]="usuario.contrasena" name="contrasena" type="password" required></ion-input>
           </ion-item>
         </div>
 
         <div class="input-wrapper">
-          <p style="color: rgb(240, 200, 21);">Teléfono</p>
+          <ion-label>Teléfono</ion-label>
           <ion-item>
             <ion-input [(ngModel)]="usuario.telefono" name="telefono" type="tel" required></ion-input>
           </ion-item>
         </div>
 
         <div class="input-wrapper">
-          <p style="color: rgb(240, 200, 21);">Email</p>
+          <ion-label>Email</ion-label>
           <ion-item>
             <ion-input [(ngModel)]="usuario.correo" name="correo" type="email" required></ion-input>
           </ion-item>
         </div>
 
         <div class="input-wrapper">
-          <p style="color: rgb(240, 200, 21);">Rol</p>
+          <ion-label>Rol</ion-label>
           <ion-item>
-            <ion-select [(ngModel)]="usuario.tipo" name="tipo" required (ionBlur)="handleBlur()">
-              <ion-select-option style="color: rgb(240, 200, 21);"value="alumno">Alumno</ion-select-option>
-              <ion-select-option style="color: rgb(240, 200, 21);" value="docente">Docente</ion-select-option>
+            <ion-select [(ngModel)]="usuario.tipo" name="tipo" required (ionChange)="handleBlur()">
+              <ion-select-option value="alumno">Alumno</ion-select-option>
+              <ion-select-option value="docente">Docente</ion-select-option>
             </ion-select>
           </ion-item>
         </div>
 
         <div class="button-container">
-          <ion-button expand="block" type="submit" class="btn-info">Registrar</ion-button>
+          <ion-button expand="block" type="submit" class="btn-register">
+            Registrar
+          </ion-button>
+        </div>
+
+        <div class="button-container">
+          <ion-button expand="block" (click)="volverALogin()" class="btn-back">
+            Volver al Login
+          </ion-button>
         </div>
       </form>
     </div>
   </div>
 </ion-content>
+<app-footer></app-footer>

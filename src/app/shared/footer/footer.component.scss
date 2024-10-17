@@ -1,25 +1,30 @@
+ion-footer {
+  background-color: #ffd100; // Amarillo de DUOC
+  color: #002855; // Azul oscuro para el texto
+  padding: 10px 15px;
+  font-size: 0.9rem;
 
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 
-::ng-deep ion-footer {
-  background-color: #e1ba09;
-  color: #ffffff;
-  padding: 15px;
-  font-size: 16px;
-  border-top: 2px solid #2980b9;
+  .footer-logo {
+    font-size: 1rem;
+    font-weight: 600;
+  }
 
+  ion-button {
+    --color: #002855;
+    font-size: 0.9rem;
+
+    ion-icon {
+      margin-right: 5px;
+    }
+
+    &:hover {
+      --color: #ffffff; // Blanco al hacer hover
+    }
+  }
 }
-
-
-
-
-::ng-deep .footer-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-::ng-deep .footer-logo {
-  font-size: 18px;
-  font-weight: bold;
-}
-

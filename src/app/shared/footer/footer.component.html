@@ -1,17 +1,13 @@
-
 <ion-footer>
   <div class="footer-content">
     <div class="footer-logo">
-      © 2024 Evaluacion1
+      © 2024 Evaluacion2
     </div>
-
-
-      <ion-buttons slot="end">
-        <ion-button (click)="logout()">
-          <ion-icon name="log-out-outline"></ion-icon>
-          Cerrar sesión
-        </ion-button>
-      </ion-buttons>
-
+    <ion-buttons slot="end" *ngIf="isAuthenticated">
+      <ion-button (click)="logout()">
+        <ion-icon name="log-out-outline"></ion-icon>
+        Cerrar sesión
+      </ion-button>
+    </ion-buttons>
   </div>
 </ion-footer>

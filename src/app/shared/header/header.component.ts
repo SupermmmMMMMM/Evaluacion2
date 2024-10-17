@@ -1,23 +1,24 @@
-import { Component } from '@angular/core';
-import { AuthService } from 'src/app/servicios/auth.service'; // Ajusta la ruta si es necesario
-import { Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/servicios/auth.service';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
+  nombreUsuario: string = '';
   isAuthenticated: boolean = false;
-  tipo: string | null = null;
 
-  constructor(private authService: AuthService, private router: Router) {
+  constructor(private authService: AuthService) {}
+
+  ngOnInit() {
     this.authService.isAuthenticated$.subscribe(auth => {
       this.isAuthenticated = auth;
     });
 
     this.authService.usuarioCompleto$.subscribe(usuario => {
-      this.tipo = usuario?.tipo || null;
+      this.nombreUsuario = usuario?.usuario || '';
     });
   }
 }

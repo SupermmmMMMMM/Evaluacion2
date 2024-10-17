@@ -2,36 +2,26 @@
   <app-header></app-header>
 </ion-header>
 
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Detalles de {{nombre}}</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content class="ion-padding">
+  <div class="main-container">
+    <h1 class="welcome-header">{{nombre | uppercase}}</h1>
 
-<ion-content>
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>Helton Smith</ion-card-title>
-      <ion-card-subtitle>Profesor</ion-card-subtitle>
-    </ion-card-header>
+    <div class="details-card">
+      <h2>Detalles de {{asignaturaNombre}}</h2>
+      <div class="professor-info">
+        <h3>PROFESOR</h3>
+        <h2>Helton Smith</h2>
+        <p>Sección: 001D</p>
+        <p>Días: Lunes y Miércoles</p>
+        <p>Hora: 10:00-12:00</p>
+        <p>Sala: MP-LINF210</p>
+      </div>
+    </div>
 
-    <ion-card-content>
-      <p>Sección: 001D</p>
-      <p>Días: Lunes y Miercoles</p>
-      <p>Hora: 10:00 -12:00</p>
-      <p>Sala: MP-LINF210</p>
-    </ion-card-content>
-  </ion-card>
-
-  <ng-container *ngIf="tipoUsuario === 'alumno'">
-    <ion-button expand="full" color="primary" (click)="abrirCamara()">
-      Escanear QR
+    <ion-button expand="block" class="custom-button" (click)="accionQR()">
+      {{ tipoUsuario === 'docente' ? 'GENERAR QR' : 'ESCANEAR QR' }}
     </ion-button>
-  </ng-container>
-  <ng-container *ngIf="tipoUsuario === 'docente'">
-    <ion-button expand="full" color="primary" (click)="generarQR()">Generar QR
-    </ion-button>
-  </ng-container>
+  </div>
 </ion-content>
 
 <ion-footer>

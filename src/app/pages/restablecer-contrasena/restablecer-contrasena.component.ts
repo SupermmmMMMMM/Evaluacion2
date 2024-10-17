@@ -1,18 +1,30 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-restablecer-contrasena',
   templateUrl: './restablecer-contrasena.component.html',
   styleUrls: ['./restablecer-contrasena.component.scss'],
 })
-export class RestablecerContrasenaComponent  implements OnInit {
-  loginError: string = '';
+export class RestablecerContrasenaComponent {
+  mensaje: string = '';
   email: string = '';
-  constructor() { }
+  error: boolean = false;
 
-  ngOnInit() {''}
+  constructor(private router: Router) { }
 
   onSubmit() {
-    this.loginError = 'Correo electrónico enviado con éxito al correo '
-    + this.email;
-}}
+    if (this.email) {
+      // Aquí iría la lógica real para enviar el correo
+      this.mensaje = `Se ha enviado un correo de restablecimiento a ${this.email}`;
+      this.error = false;
+    } else {
+      this.mensaje = 'Por favor, introduce un correo electrónico válido';
+      this.error = true;
+    }
+  }
+
+  volver() {
+    this.router.navigate(['/inicio-sesion']);
+  }
+}

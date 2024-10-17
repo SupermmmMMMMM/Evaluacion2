@@ -1,0 +1,62 @@
+/* Estilos básicos para el cuerpo */
+.cuerpo {
+
+
+
+  height: 100%; /* Ocupa toda la altura */
+  margin: 0; /* Eliminar márgenes predeterminados */
+  overflow: auto; /* Permitir scroll */
+
+
+
+  display: flex;
+  justify-content: center;
+
+  height: 100vh;
+  padding-top: 20px;
+  margin: 0;
+}
+
+
+.menu-container {
+  width: 300px;
+background-color: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 10px;
+  backdrop-filter: blur(10px);
+align-self: center;}
+
+
+
+details {
+  margin-bottom: 10px;
+
+  border-radius: 5px;
+  padding: 10px;
+}
+
+summary {
+  font-weight: bold;
+  cursor: pointer;
+  padding: 8px;
+  background-color:#e1ba09;
+  color: white;
+  border-radius: 5px;
+}
+
+
+summary:hover {
+  background-color: #9b6a08;
+}
+
+details[open] {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 10px;
+  backdrop-filter: blur(10px);
+}
+
+p {
+  margin: 5px 0;
+  color: #e6dddd;
+}

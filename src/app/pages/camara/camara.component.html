@@ -1,0 +1,22 @@
+<ionic-header>
+  <app-header></app-header>
+</ionic-header>
+
+<ion-content class="ion-padding">
+    <h2>Escanear QR</h2>
+    <form (ngSubmit)="onSubmit()">
+      <ion-item>
+        <ion-card-content>
+          <p>abre la camara xuxetu</p>
+        </ion-card-content>
+      </ion-item>
+      <ion-button expand="block" type="submit">si</ion-button>
+      <ion-button expand="block" (click)="cancelar()">no</ion-button>
+    </form>
+    <ion-text color="danger" *ngIf="loginError">{{ loginError }}</ion-text>
+    <ion-button expand="block" type="submit" (click)="volver()">Volver al menú principal</ion-button>
+</ion-content>
+
+<ion-footer>
+  <app-footer></app-footer>
+</ion-footer>

@@ -1,0 +1,43 @@
+.centered-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+h2 {
+
+  color: #fffbfb;
+  display: flex;
+  justify-content: center;
+
+}
+
+form {
+  width: 100%;
+}
+
+
+.custom-button {
+  margin-top: 20px;
+  --background: #3880ff;
+  --background-hover: #3171e0;
+  --color: #ffffff;
+  font-weight: bold;
+  text-transform: uppercase;
+  --border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+  height: 40px;
+  width: 100%;
+}
+
+
+
+ion-item{
+
+  --border-radius: 10px;
+
+}

@@ -1,0 +1,17 @@
+
+<app-header></app-header>
+
+
+<ion-content class="ion-padding">
+
+<div class="hola"> <h2>Generar QR</h2>
+
+      <h3> {{qrData}}</h3>
+        <qrcode [qrdata]="qrData" ></qrcode>
+         <ion-button expand="block" type="submit" (click)="volver()">Volver al menú principal</ion-button>
+
+</div>
+
+</ion-content>
+
+  <app-footer></app-footer>

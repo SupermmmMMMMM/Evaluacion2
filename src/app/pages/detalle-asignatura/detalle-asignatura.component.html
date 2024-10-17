@@ -1,0 +1,39 @@
+<ion-header>
+  <app-header></app-header>
+</ion-header>
+
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Detalles de {{nombre}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Helton Smith</ion-card-title>
+      <ion-card-subtitle>Profesor</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      <p>Sección: 001D</p>
+      <p>Días: Lunes y Miercoles</p>
+      <p>Hora: 10:00 -12:00</p>
+      <p>Sala: MP-LINF210</p>
+    </ion-card-content>
+  </ion-card>
+
+  <ng-container *ngIf="tipoUsuario === 'alumno'">
+    <ion-button expand="full" color="primary" (click)="abrirCamara()">
+      Escanear QR
+    </ion-button>
+  </ng-container>
+  <ng-container *ngIf="tipoUsuario === 'docente'">
+    <ion-button expand="full" color="primary" (click)="generarQR()">Generar QR
+    </ion-button>
+  </ng-container>
+</ion-content>
+
+<ion-footer>
+  <app-footer></app-footer>
+</ion-footer>

@@ -1,0 +1,25 @@
+
+
+::ng-deep ion-footer {
+  background-color: #e1ba09;
+  color: #ffffff;
+  padding: 15px;
+  font-size: 16px;
+  border-top: 2px solid #2980b9;
+
+}
+
+
+
+
+::ng-deep .footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+::ng-deep .footer-logo {
+  font-size: 18px;
+  font-weight: bold;
+}
+

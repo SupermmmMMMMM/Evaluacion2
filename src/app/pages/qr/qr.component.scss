@@ -1,0 +1,15 @@
+.hola{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;  // Alineamos hacia el inicio (parte superior)
+  align-items: center;          // Centramos horizontalmente
+  height: 100vh;                // Altura completa de la pantalla
+  text-align: center;           // Centrado del texto
+  padding-top: 20vh;
+}
+h2{
+color: aliceblue;
+}
+h3{
+  color: aliceblue;
+}

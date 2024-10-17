@@ -1,0 +1,23 @@
+ion-header {
+  background-color: #e1ba09;
+  padding: 10px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.custom-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.custom-title {
+  color: #150e73; /* Color del título */
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.custom-title .highlight {
+  color: #e1ba09; /* Color destacado en el título */
+}
+
